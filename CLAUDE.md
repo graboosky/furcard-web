@@ -23,15 +23,24 @@ internal notes, no credentials.
 ```
 petid-web/
 ├── CLAUDE.md
-└── <TODO: fill in once the site has a shape>
+├── .nojekyll        Pages serves the files as they are
+├── index.html       what PetID is, in two lines, and the links
+├── privacy.html     the privacy policy — rendered by ../tools/make-web-pages.py from ../docs/privacy-policy.md
+├── support.html     the support page — rendered the same way from ../docs/support-page.md
+└── style.css        the one stylesheet: system fonts, light and dark
 ```
+
+`privacy.html` and `support.html` are never edited here: their sources are in the container's `docs/`, and
+`make-web-pages.py` refuses to render while a placeholder (the contact email, the date) is left.
 
 **This tree is the single source of truth for this repository's structure. When a file or
 folder is added, removed, or renamed, update it in the same change.**
 
 ## Status
 
-Nothing is written yet — no pages, no stylesheet.
+The index and the stylesheet are written; the privacy and support pages are drafted in `../docs/` (2026-10-11,
+M7b) and wait for the owner's contact email, a lawyer's reading and the owner's yes before they are rendered,
+pushed and Pages is turned on.
 
 **Stack decided:** plain HTML and CSS, no build step. What is in the repository is exactly
 what is served.
@@ -54,9 +63,8 @@ gh api -X POST repos/graboosky/petid-web/pages -f 'source[branch]=main' -f 'sour
 | Terms of use | App Store Connect | only if PetID sells an auto-renewable subscription — Apple's standard EULA may be linked instead |
 | Account deletion | Google Play | only if PetID lets a user create an account |
 
-<TODO: the file name of each page, once written. A URL pasted into a store listing is
-permanent in practice — renaming a page later means a 404 in front of review and a
-metadata edit in both stores.>
+Privacy policy: `privacy.html`. Support: `support.html`. A URL pasted into a store listing is permanent in
+practice — renaming a page later means a 404 in front of review and a metadata edit in both stores.
 
 **The privacy policy must say what the app actually does with what the user gives it** —
 pet photos, health records, the vet's contact details, reminders. Write it from
