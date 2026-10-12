@@ -51,7 +51,7 @@ what is served.
 files as they are rather than running them through Jekyll, then turn Pages on:
 
 ```bash
-gh api -X POST repos/graboosky/petid-web/pages -f 'source[branch]=main' -f 'source[path]=/'
+gh api -X POST repos/graboosky/furcard-web/pages -f 'source[branch]=main' -f 'source[path]=/'
 ```
 
 ## The pages the stores require
@@ -75,7 +75,7 @@ same release as any feature that changes what is collected or where it goes.
 
 | What | Value |
 |---|---|
-| Production URL | `https://graboosky.github.io/petid-web/` |
+| Production URL | `https://graboosky.github.io/furcard-web/` |
 | DNS / registrar | none — the domain is GitHub's. A custom domain is a later decision (a `CNAME` file plus DNS). |
 | Host | GitHub Pages |
 
@@ -85,7 +85,7 @@ order for this reason. Check with the verb review uses — a `GET`, not a `HEAD`
 can answer differently:
 
 ```bash
-curl -s -o /dev/null -w '%{http_code}\n' https://graboosky.github.io/petid-web/<page>.html
+curl -s -o /dev/null -w '%{http_code}\n' https://graboosky.github.io/furcard-web/<page>.html
 ```
 
 ## Build & test
